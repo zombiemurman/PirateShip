@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipMove : MonoBehaviour
 {
+    [SerializeField] private Transform _ship;
     [SerializeField] private Transform _sail;
     [SerializeField] private Transform _wind;
     [SerializeField] private float _speed;
@@ -14,15 +15,14 @@ public class ShipMove : MonoBehaviour
 
     private void Update()
     {
-        float dotProduct = Vector3.Dot(_sail.forward.normalized, _wind.forward.normalized);
+        float dotSailWind = Vector3.Dot(_sail.forward.normalized, _wind.forward.normalized);
+        float dotSaiShip = Vector3.Dot(_sail.forward.normalized, _ship.forward.normalized);
 
-        _currnetSpeed = _speed * dotProduct;
+        _currnetSpeed = _speed * dotSailWind * dotSaiShip;
 
         if(_currnetSpeed < 0)
             _currnetSpeed = 0;
 
-        
-       
     }
 
     private void FixedUpdate()

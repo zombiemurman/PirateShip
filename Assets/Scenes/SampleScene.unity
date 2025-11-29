@@ -751,6 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea9612e50b9d74cbcc5bdb549778ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ship: {fileID: 1314663473}
   _sail: {fileID: 434610979833540382}
   _wind: {fileID: 312549137}
   _speed: 2
